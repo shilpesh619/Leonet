@@ -1,7 +1,9 @@
 # Leonet
 # LeoNet: A Biologically-Inspired Transformer with Expansion–Contraction Dynamics and Dual Cognitive–Motor Outputs
 
-![LeoNet Architecture](./images/leonet_diagram.png)
+![LeoNet Architecture](![Leonet](https://github.com/user-attachments/assets/f2e8f85b-bb16-48c0-9bd2-6a1e9a1024aa)
+)
+)
 
 ## 🧠 Overview
 
