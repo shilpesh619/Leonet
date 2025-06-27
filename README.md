@@ -83,5 +83,5 @@ Citation
   author = {Silpeshkumar J. Patel},
   title = {LeoNet: A Biologically-Inspired Transformer with Expansion--Contraction Dynamics and Dual Cognitive--Motor Outputs},
   year = {2025},
-  url = {https://github.com/yourusername/leonet}
+  url = {https://github.com/shilpesh619/leonet}
 }
