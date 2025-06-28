@@ -38,6 +38,16 @@ LeoNetVision/
 └── requirements.txt                        # Dependencies
 pip install -r requirements.txt
 
+# Train
+python leonet_train_vision.py
+
+# Preview cursor
+python leonet_cursor_preview.py
+
+# Run Live Agent
+python leonet_live_agent.py
+
+
 
 Citation
 
