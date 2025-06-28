@@ -23,6 +23,19 @@ It receives both tokenized command text and a screenshot tensor.
 
 ## Setup
 ```bash
+LeoNetVision/
+├── leonet_model_vision_v2_dropout.py       # Model definition (V2 with dropout)
+├── command_dataset_vision.py               # Dataset loader and image preprocessor
+├── generate_vision_dataset.py              # Dataset generation script
+├── leonet_train_vision.py                  # Training script
+├── leonet_infer_vision.py                  # CLI-based inference
+├── leonet_cursor_preview.py                # Simulated cursor movement preview
+├── leonet_live_agent.py                    # Voice + vision live control agent
+├── screenshots/                            # Screenshot image folder
+├── leonet_command_vision_500.jsonl         # Dataset file
+├── model-en/                               # Whisper or Vosk speech model (optional)
+├── README.md                               # Project overview
+└── requirements.txt                        # Dependencies
 pip install -r requirements.txt
 
 
