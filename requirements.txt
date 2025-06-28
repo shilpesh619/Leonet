@@ -1,0 +1,14 @@
+
+---
+
+### 📦 3. **requirements.txt**
+```txt
+torch
+torchvision
+torchaudio
+transformers
+pyautogui
+pyaudio
+vosk
+whisper
+Pillow
