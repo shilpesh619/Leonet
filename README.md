@@ -110,6 +110,70 @@ Motor output is trained using MSE loss to match known action deltas from data li
 }
 ```
 
+## 🔍 LeoNet vs Other Transformer Models
+
+| Model         | Parameters (M) | FLOPs (GFLOPs) | Inference Latency (ms) | Motor Output Support | Dual Output (Lang + Motor) | Use Case Suitability     |
+|---------------|----------------|----------------|--------------------------|----------------------|-----------------------------|--------------------------|
+| **LeoNet**    | **29.55**      | **0.818**      | **54.5**                 | ✅ 1024-dim          | ✅ Yes                      | Real-world dual-task     |
+| TinyBERT      | 14.5           | 1.3            | ~66                      | ❌ None              | ❌ No                       | Lightweight NLP          |
+| DistilBERT    | 66             | 3.8            | ~115                     | ❌ None              | ❌ No                       | Faster BERT              |
+| BERT Base     | 110            | 12.0           | ~150                     | ❌ None              | ❌ No                       | Deep language tasks      |
+| GPT-2 Small   | 124            | 15.5           | ~180                     | ❌ None              | ❌ No                       | Generative tasks         |
+
+
+
+
+## 🤖 Deploy LeoNet on Raspberry Pi / Jetson (Edge Robotics Ready)
+
+LeoNet is designed not just for research, but for **real-world deployment** in low-resource environments like **Raspberry Pi** and **NVIDIA Jetson** platforms.
+
+### ✅ Why LeoNet is Edge-Ready
+
+| Feature                             | Supported |
+|-------------------------------------|-----------|
+| Dual Output (Language + Motor)      | ✅ Yes     |
+| Low FLOPs (~0.818 GFLOPs)           | ✅ Yes     |
+| Compact Model (~29.5M Parameters)   | ✅ Yes     |
+| Inference Latency (~54 ms)          | ✅ Yes     |
+| Suitable for Real-Time Robotics     | ✅ Yes     |
+| Runs on Jetson Nano / Xavier / Pi 4 | ✅ Yes     |
+
+---
+
+### 🧠 Use Cases
+
+- 🕹️ Voice-controlled robots and actuators  
+- 🖱️ Mouse and UI agents controlled by language  
+- 🧠 Cognitive agents with both interpretation and action  
+- 🤖 Real-time robots using natural language as control
+
+---
+
+### 🔧 Deployment Tips
+
+- ✅ Convert model to **TorchScript** or **ONNX** for optimized runtime
+- ✅ Use **int8 quantization** to reduce model size for edge hardware
+- ✅ Batch size = 1 for lowest latency on CPU or GPU
+- ✅ Works on:
+  - Raspberry Pi 4 (ARM64, with PyTorch Lite)
+  - Jetson Nano / Xavier NX (JetPack + TensorRT)
+  - Any Linux-based embedded board with Python3 + PyTorch
+
+---
+
+### 📦 Example Application
+
+> **Input**: `"move cursor right"`  
+> **LeoNet Output**: `[0.12, 0.00, ..., -0.04]`  
+> **Action**: Simulated or real motor movement (e.g., servo, cursor, wheel)
+
+---
+
+LeoNet bridges **language understanding and physical action**, making it ideal for embodied agents, GUI automation, and embedded AI.
+
+
+
+
 ---
 
 ## 📈 Citation (for Research)
