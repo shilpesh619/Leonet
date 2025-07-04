@@ -14,7 +14,6 @@ LeoNet transforms **typed natural language commands** (e.g., "move left", "scrol
 | `leonet_command_vision_500.jsonl` | A small sample dataset of command-to-motor pairs (8x128 motion vectors).  |
 | `leonet_train_pipeline.py`  | The model training script (text + motor prediction).                        |
 | `Leonet_inference.py`       | Inference script for typing a command and observing real mouse movement.    |
-| `motor_executor.py`         | Utility to translate motor vectors into real mouse motion using PyAutoGUI. |
 
 ---
 
