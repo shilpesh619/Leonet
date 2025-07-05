@@ -28,6 +28,58 @@ The motor stream is trained to **directly map commands like "move right" into cu
 
 This prototype bridges the gap between **natural language processing and motor control**, setting the foundation for fully embodied LLM-based agents.
 
+┌───────────────────────────┐
+│       Input Tokens        │  ← "move left"
+└─────────────┬─────────────┘
+              │
+      ┌───────▼────────┐
+      │ Token Embedding│
+      └───────┬────────┘
+              │
+    ┌─────────▼─────────────┐
+    │ + Positional Encoding │
+    └─────────┬─────────────┘
+              │
+     ┌────────▼────────┐
+     │ Stack of L Blocks│ (Transformer Blocks)
+     └────────┬────────┘
+              │
+    ╔═════════▼════════════════════════════════════════════════════╗
+    ║   Within Each Transformer Block:                            ║
+    ║   ┌───────────────────────────────────────────────────┐     ║
+    ║   │    Multi-Head Self Attention                     │     ║
+    ║   └─────────────┬────────────────────────────────────┘     ║
+    ║                 │                                          ║
+    ║        ┌────────▼────────┐                                  ║
+    ║        │   LayerNorm     │                                  ║
+    ║        └────────┬────────┘                                  ║
+    ║                 │                                          ║
+    ║      ┌──────────▼─────────────┐                             ║
+    ║      │ Expansion-Contraction  │                             ║
+    ║      │  • Expand (Linear)     │                             ║
+    ║      │  • Motor Projection    │─────► [Motor Pathway] ──────┼─► Motor Head (per block)
+    ║      │  • Cognitive Projection│                             ║
+    ║      │  • Contract + LayerNorm│                             ║
+    ║      └──────────┬─────────────┘                             ║
+    ║                 │                                          ║
+    ║        [Back to Main Stream]                               ║
+    ╚═════════▲════════════════════════════════════════════════════╝
+              │ (Repeat for N blocks)
+              │
+      ┌───────▼────────┐
+      │  Final Norm    │
+      └───────┬────────┘
+              │
+   ┌──────────▼─────────┐           ┌─────────────────────────┐
+   │  Language Head     │           │ Motor Heads (all blocks)│
+   │ (Token Prediction) │           │   Concatenate + MLP     │
+   └─────────┬──────────┘           └─────────────┬───────────┘
+             │                                    │
+             ▼                                    ▼
+      [Cognitive Output]                   [Motor Output]
+      (token probabilities)                (flattened vector)
+
+
 ---
 
 ## ⚙️ Setup Instructions
