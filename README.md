@@ -122,7 +122,7 @@ Motor output is trained using MSE loss to match known action deltas from data li
 
 
 
-## 🤖 Deploy LeoNet on Raspberry Pi / Jetson (Edge Robotics Ready)--- checkout my leonet/robotics repo for more information.
+## 🤖 Deploy LeoNet on Raspberry Pi / Jetson (Edge Robotics Ready)--- checkout my leonet/robotic repo for more information.
 
 LeoNet is designed not just for research, but for **real-world deployment** in low-resource environments like **Raspberry Pi** and **NVIDIA Jetson** platforms.
 
