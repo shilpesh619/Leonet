@@ -177,6 +177,15 @@ LeoNet bridges **language understanding and physical action**, making it ideal f
 
 ## 📈 Citation (for Research)
 
+@misc{silpeshkumar_patel_2025,
+	author       = { Silpeshkumar Patel },
+	title        = { Leonet (Revision d7f67f5) },
+	year         = 2025,
+	url          = { https://huggingface.co/shilpesh619/Leonet },
+	doi          = { 10.57967/hf/5941 },
+	publisher    = { Hugging Face }
+}
+
 ```
 Silpeshkumar Jitendrabhai Patel. 
 LeoNet: A Brain-Inspired Transformer for Dual Cognitive and Motor Output in Real-World Environments. 
